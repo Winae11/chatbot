@@ -1,0 +1,105 @@
+Vector Databases and RAG Explained
+
+What is a Vector Database?
+
+A vector database is a specialized database designed to store and query high-dimensional vectors (embeddings). Unlike traditional databases that store structured data in rows and columns, vector databases optimize for similarity search operations on vector embeddings.
+
+Key Characteristics:
+- Stores and retrieves high-dimensional vector embeddings
+- Supports fast similarity search using vector distance metrics
+- Enables semantic search based on meaning rather than keywords
+- Scales efficiently to millions or billions of vectors
+- Supports filtering and metadata association with vectors
+
+Vector Embeddings:
+Vector embeddings are numerical representations of text, images, or other data in a high-dimensional space. They capture semantic meaning and relationships. For example, the word "king" and "queen" would have similar embeddings, while "king" and "table" would be more different.
+
+Popular Vector Databases:
+- Chroma: Lightweight, open-source, easy to use
+- Pinecone: Managed service with powerful search capabilities
+- Weaviate: Open-source with advanced filtering and multi-modal search
+- Milvus: Open-source, designed for AI and ML applications
+- Qdrant: High-performance, written in Rust
+- Postgres with pgvector: SQL database with vector extensions
+
+What is RAG?
+
+RAG stands for Retrieval-Augmented Generation. It's a technique that combines information retrieval with language generation to produce more accurate and contextual responses.
+
+RAG Architecture:
+
+1. Document Preparation:
+   - Collect and prepare documents
+   - Split into chunks for processing
+   - Generate embeddings for each chunk
+
+2. Retrieval:
+   - User asks a question
+   - Convert question to embedding
+   - Search vector database for similar document chunks
+   - Retrieve top-k most relevant chunks
+
+3. Generation:
+   - Pass retrieved documents and question to LLM
+   - LLM generates response using context from documents
+   - Response is grounded in actual data, not just training data
+
+Benefits of RAG:
+- Reduces hallucinations by grounding responses in real data
+- Allows use of current information without retraining LLM
+- Enables knowledge over large document collections
+- More interpretable - sources can be cited
+- Cost-effective - use smaller LLMs with external knowledge
+- Privacy-preserving - sensitive data stays local
+
+Chroma DB:
+
+Chroma is a lightweight vector database optimized for AI applications. It's open-source and designed to be easy to use for developers.
+
+Features:
+- Simple in-memory and persistent storage options
+- Built-in embeddings generation
+- Supports various embedding models
+- Easy filtering and metadata management
+- Works well with LangChain and other LLM frameworks
+- Persistence to disk for recovery
+
+Basic Usage:
+```python
+from langchain_chroma import Chroma
+from langchain_google_genai import GoogleGenerativeAIEmbeddings
+
+embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001")
+vector_store = Chroma.from_documents(
+    documents=docs,
+    embedding=embeddings,
+    persist_directory="./chroma_db"
+)
+```
+
+RAG Workflow Example:
+
+1. Load documents (PDFs, text files, web pages)
+2. Generate embeddings for document chunks
+3. Store embeddings in Chroma
+4. User submits query
+5. Convert query to embedding
+6. Find similar document chunks using vector similarity
+7. Pass retrieved chunks + query to Gemini LLM
+8. LLM generates contextual answer
+9. Return answer with source citations
+
+Use Cases:
+- Customer support chatbots answering questions from documentation
+- Research assistants searching through academic papers
+- Code documentation assistants
+- Legal document analysis
+- Medical information retrieval
+- Product information chatbots
+- Enterprise knowledge bases
+
+Advantages Over Traditional Search:
+- Semantic understanding rather than keyword matching
+- Better handling of synonyms and related concepts
+- More relevant results for natural language queries
+- Contextual understanding of user intent

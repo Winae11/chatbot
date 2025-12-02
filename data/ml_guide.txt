@@ -1,0 +1,45 @@
+Machine Learning Fundamentals
+
+Machine Learning is a subset of Artificial Intelligence that enables systems to learn and improve from experience without being explicitly programmed. ML algorithms build a mathematical model based on training data to make predictions or decisions.
+
+Types of Machine Learning:
+
+Supervised Learning:
+In supervised learning, the algorithm learns from labeled training data. The training data consists of input-output pairs. Common tasks include classification (predicting categories) and regression (predicting continuous values). Examples include linear regression, logistic regression, decision trees, random forests, and support vector machines.
+
+Unsupervised Learning:
+Unsupervised learning works with unlabeled data. The algorithm discovers patterns and structures in the data. Common tasks include clustering (grouping similar data points) and dimensionality reduction (reducing number of features). Examples include k-means clustering, hierarchical clustering, and principal component analysis (PCA).
+
+Reinforcement Learning:
+In reinforcement learning, an agent learns by interacting with an environment. The agent takes actions and receives rewards or penalties. The goal is to learn a policy that maximizes cumulative reward. This is used in game playing, robotics, and autonomous systems.
+
+Key Concepts:
+
+Training and Testing:
+Data is typically split into training and testing sets. The model learns from the training data and is evaluated on the testing data to assess generalization.
+
+Overfitting and Underfitting:
+Overfitting occurs when a model learns the training data too well, including its noise, resulting in poor performance on new data. Underfitting occurs when a model is too simple and fails to capture underlying patterns.
+
+Feature Engineering:
+Feature engineering is the process of selecting, transforming, and creating features that improve model performance. Good features lead to better models.
+
+Hyperparameter Tuning:
+Hyperparameters are parameters set before training. Techniques like grid search and random search help find optimal hyperparameters.
+
+Evaluation Metrics:
+Common metrics include accuracy, precision, recall, F1-score for classification, and mean squared error (MSE), mean absolute error (MAE) for regression.
+
+Popular ML Libraries:
+- Scikit-learn: For traditional machine learning algorithms
+- TensorFlow: For deep learning and neural networks
+- PyTorch: Another popular deep learning framework
+- Pandas: For data manipulation and analysis
+- NumPy: For numerical computing
+- Matplotlib and Seaborn: For data visualization
+
+Deep Learning:
+Deep learning uses artificial neural networks with multiple layers. Convolutional Neural Networks (CNNs) are used for image processing. Recurrent Neural Networks (RNNs) are used for sequence processing. Transformers have revolutionized natural language processing.
+
+Applications:
+Machine learning is applied in various domains including computer vision, natural language processing, recommendation systems, fraud detection, medical diagnosis, autonomous vehicles, and many more.
